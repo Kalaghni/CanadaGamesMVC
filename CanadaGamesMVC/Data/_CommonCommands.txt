@@ -1,0 +1,4 @@
+﻿Add-Migration -Context CanadaGamesContext -o Data\CGMigrations Initial
+Update-Database -Context CanadaGamesContext
+
+ExtraMigration.Steps(migrationBuilder);

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CanadaGamesMVC.ViewModels.PlacementReport>
+
+
+<form asp-action="DownloadPlacements">
+    @if (User.IsInRole("Admin"))
+    {
+    <div class="form-horizontal">
+        <div class="form-group col-md-4">
+            <label class="control-label">Placement Contingent:</label>
+            @Html.DropDownList("ContingentID", null, "All", htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="form-group col-md-4 align-self-end">
+            <input type="submit" name="actionButton" value="Download Placement Report" class="btn btn-info" />
+        </div>
+    </div>
+    }
+</form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FormalName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contingent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AveragePlacement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HighestPlacement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LowestPlacement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventCount)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormalName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contingent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AveragePlacement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HighestPlacement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LowestPlacement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventCount)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

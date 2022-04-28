@@ -1,0 +1,66 @@
+﻿@model CanadaGamesMVC.ViewModels.PlacementReport
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PlacementReport</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiddleName" class="control-label"></label>
+                <input asp-for="MiddleName" class="form-control" />
+                <span asp-validation-for="MiddleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contingent" class="control-label"></label>
+                <input asp-for="Contingent" class="form-control" />
+                <span asp-validation-for="Contingent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AveragePlacement" class="control-label"></label>
+                <input asp-for="AveragePlacement" class="form-control" />
+                <span asp-validation-for="AveragePlacement" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HighestPlacement" class="control-label"></label>
+                <input asp-for="HighestPlacement" class="form-control" />
+                <span asp-validation-for="HighestPlacement" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LowestPlacement" class="control-label"></label>
+                <input asp-for="LowestPlacement" class="form-control" />
+                <span asp-validation-for="LowestPlacement" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventCount" class="control-label"></label>
+                <input asp-for="EventCount" class="form-control" />
+                <span asp-validation-for="EventCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
